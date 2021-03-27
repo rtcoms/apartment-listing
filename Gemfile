@@ -34,6 +34,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-expectations'
 end
 
 group :development do
