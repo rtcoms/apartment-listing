@@ -34,5 +34,12 @@ RSpec.describe ApartmentSearchService do
     it 'should search by bathroom greater than equal to' do
       expect(ApartmentSearchService.new(search_params: { number_of_bathrooms_gte: 2 }).execute).to match_array([apartment_flat_3bhk, apartment_villa])
     end
+
+    it 'should search by multiple search params' do
+      expect(ApartmentSearchService.new(search_params: { number_of_bedrooms_gte: 1, number_of_bathrooms_gte: 1 }).execute).to match_array([apartment_flat_3bhk, apartment_flat_2bhk, apartment_villa, apartment_studio])
+      expect(ApartmentSearchService.new(search_params: { number_of_bedrooms_gte: 2, number_of_bathrooms_gte: 2, area_gte: 1500  }).execute).to match_array([apartment_flat_3bhk, apartment_villa])
+      expect(ApartmentSearchService.new(search_params: { number_of_bedrooms_gte: 2, number_of_bathrooms_gte: 2, area_gte: 1500, price_gte: 500000 }).execute).to match_array([apartment_villa])
+      expect(ApartmentSearchService.new(search_params: { number_of_bedrooms_gte: 2, number_of_bathrooms_gte: 2, area_gte: 1500, price_gte: 500000, query: 'invalid' }).execute).to match_array([])
+    end
   end
 end
