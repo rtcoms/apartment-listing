@@ -15,7 +15,6 @@ RSpec.describe "Api::V1::Apartments", type: :request do
         { id: apartment_villa.id, title: apartment_villa.title }.ignore_extra_keys!,
         { id: apartment_flat_2bhk.id, title: apartment_flat_2bhk.title }.ignore_extra_keys!,
         { id: apartment_flat_3bhk.id, title: apartment_flat_3bhk.title }.ignore_extra_keys!,
-        { id: apartment_studio.id, title: apartment_studio.title }.ignore_extra_keys!,
       ]
 
       expect(response).to be_successful
