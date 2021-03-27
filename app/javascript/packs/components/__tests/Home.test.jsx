@@ -1,11 +1,11 @@
-import Hello from '../Hello.jsx'
+import Home from '../Home.jsx'
 
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-test('hello should render with name', () => {
+test('Home should render with name', () => {
   const component = renderer.create(
-    <Hello name="Kasaz">Facebook</Hello>,
+    <Home name="Kasaz">Facebook</Home>,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

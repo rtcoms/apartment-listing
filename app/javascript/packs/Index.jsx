@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Hello from './components/Hello';
+import App from "./components/App.jsx";
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <App />,
     document.getElementById("root").appendChild(document.createElement('div')),
   )
 })
