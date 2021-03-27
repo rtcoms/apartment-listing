@@ -1,6 +1,6 @@
 class ApartmentSearchService
-  def initialize(search_params: {})
-    @search_params = search_params
+  def initialize(search_params:)
+    @search_params = search_params || {}
     @query = @search_params[:query]
     @bedroom_gte_param = @search_params[:number_of_bedrooms_gte]
     @bathroom_gte_param = @search_params[:number_of_bathrooms_gte]

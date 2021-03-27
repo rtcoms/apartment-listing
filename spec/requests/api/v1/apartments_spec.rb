@@ -21,8 +21,6 @@ RSpec.describe "Api::V1::Apartments", type: :request do
       ]
       expect(response).to be_successful
 
-
-
       expect(response).to have_http_status(:success)
       expect(response.body.as_json).to match_json_expression(expected_response)
     end
