@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hello should render with name 1`] = `
+<div>
+  Hello 
+  Kasaz
+  !
+</div>
+`;
