@@ -4,7 +4,7 @@ FactoryBot.define do
     price { 1 }
     area { 1 }
     number_of_bedrooms { 1 }
-    number_of_bathroom { 1 }
+    number_of_bathrooms { 1 }
     image { "MyString" }
   end
 end
