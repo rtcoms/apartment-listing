@@ -10,13 +10,24 @@ RSpec.describe "Api::V1::Apartments", type: :request do
 
     it "returns http success" do
       get "/api/v1/apartments"
-
-      expected_response = [
-        { id: apartment_villa.id, title: apartment_villa.title }.ignore_extra_keys!,
-        { id: apartment_flat_2bhk.id, title: apartment_flat_2bhk.title }.ignore_extra_keys!,
-        { id: apartment_flat_3bhk.id, title: apartment_flat_3bhk.title }.ignore_extra_keys!,
-      ]
-
+      expected_response = {
+        apartments:{
+          data: [
+            { id: apartment_flat_2bhk.id.to_s,
+              attributes: { id: apartment_flat_2bhk.id, title: apartment_flat_2bhk.title }.ignore_extra_keys!
+            }.ignore_extra_keys!,
+            { id: apartment_villa.id.to_s,
+              attributes: { id: apartment_villa.id, title: apartment_villa.title }.ignore_extra_keys!
+            }.ignore_extra_keys!,
+          ]
+        }.ignore_extra_keys!,
+        total: 4,
+        page: 1,
+        total_pages: 2,
+        page_item_count: 2,
+        is_first_page: true,
+        is_last_page: false
+      }
       expect(response).to be_successful
       expect(response).to have_http_status(:success)
       expect(response.body.as_json).to match_json_expression(expected_response)
@@ -25,9 +36,21 @@ RSpec.describe "Api::V1::Apartments", type: :request do
     it "returns http success" do
       get "/api/v1/apartments", params: {query: { number_of_bedrooms_gte: 2, number_of_bathrooms_gte: 2, area_gte: 1500, price_gte: 500000 }}
 
-      expected_response = [
-        { id: apartment_villa.id, title: apartment_villa.title }.ignore_extra_keys!,
-      ]
+      expected_response = {
+        apartments:{
+          data: [
+            { id: apartment_villa.id.to_s,
+              attributes: { id: apartment_villa.id, title: apartment_villa.title }.ignore_extra_keys!
+            }.ignore_extra_keys!,
+          ]
+        }.ignore_extra_keys!,
+        total: 1,
+        page: 1,
+        total_pages: 1,
+        page_item_count: 1,
+        is_first_page: true,
+        is_last_page: true
+      }
 
       expect(response).to be_successful
       expect(response).to have_http_status(:success)

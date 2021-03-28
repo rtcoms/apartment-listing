@@ -10,7 +10,7 @@ function ApartmentList ({searchParams}) {
 
   useEffect(() => {
     fetchApartmentsApi(searchParams).then(
-      (result) => { setIsLoaded(true); setApartments(result); },
+      (result) => { setIsLoaded(true); setApartments(result.apartments.data); },
       (error) => { setIsLoaded(true); setError(error); }
     );
   }, [])
@@ -22,11 +22,13 @@ function ApartmentList ({searchParams}) {
   } else {
     return (
       <ul>
-        {apartments.map(apartment => (
-          <li key={apartment.id}>
-            {apartment.title} {apartment.price}
-          </li>
-        ))}
+        {apartments.map((apartment) => {
+          let apartmentAttributes = apartment.attributes;
+
+          return (<li key={apartmentAttributes.id}>
+            {apartmentAttributes.title} {apartmentAttributes.price}
+          </li>)
+          })}
       </ul>
     );
   }
