@@ -22,6 +22,10 @@ const model = {
     updatePageNumber: action((state, newPageNumber) => {
       state.filters.page = newPageNumber;
     }),
+
+    updateQueryFilters: action((state, newFilters) => {
+      state.filters.query = newFilters;
+    }),
   },
 };
 

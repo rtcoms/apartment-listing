@@ -15,6 +15,9 @@ function ApartmentPage() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  console.log('------track search params');
+  console.log(searchParams);
+
   useEffect(() => {
     if(searchParams !== null) {
       fetchApartmentsApi(searchParams).then(

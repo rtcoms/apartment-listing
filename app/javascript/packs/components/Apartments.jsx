@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import qs, { parse } from 'qs';
 import { Link } from "react-router-dom";
 import ApartmentPage from './ApartmentPage.jsx';
+import ApartmentsFilterForm from './ApartmentsFilterForm.jsx';
 import { useLocation } from 'react-router-dom';
 import { useStoreActions } from 'easy-peasy';
 
@@ -19,6 +20,7 @@ function Apartments () {
       <div>Apartments Listing</div>
       <ApartmentPage />
       <Link to={`/`}> Back to Home </Link>
+      <ApartmentsFilterForm  />
     </React.Fragment>)
   }
 
