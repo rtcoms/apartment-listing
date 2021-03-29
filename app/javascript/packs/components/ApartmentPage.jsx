@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useStoreActions, userStoreState } from 'easy-peasy';
 import qs from 'qs';
 import { fetchApartmentsApi } from '../api/apartment.js';
 import PropTypes from 'prop-types'
@@ -10,6 +11,9 @@ import PaginationLink from './PaginationLink.jsx';
 function ApartmentPage() {
   let location = useLocation();
   let parsedParams = qs.parse(location.search, { ignoreQueryPrefix: true });
+  const updateApartmentFilters = useStoreActions((actions) => actions.apartmentFilters.setFilters);
+  const updateApartmentList = useStoreActions((actions) => actions.apartments.updateApartmentList);
+
   const [searchParams, setSearchParams] = useState(parsedParams);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,8 +21,12 @@ function ApartmentPage() {
 
   useEffect(() => {
     setSearchParams(parsedParams);
+    updateApartmentFilters(parsedParams);
     fetchApartmentsApi(searchParams).then(
-      (result) => { setIsLoaded(true); setApartmentsData(result); },
+      (result) => {
+        setIsLoaded(true);
+        updateApartmentList(result)
+        setApartmentsData(result); },
       (error) => { setIsLoaded(true); setError(error); }
     );
   }, [])
