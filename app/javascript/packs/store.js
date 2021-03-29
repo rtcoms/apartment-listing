@@ -5,14 +5,14 @@ import { action } from 'easy-peasy';
 
 const model = {
   apartments: {
-    paginatedListing: {},
+    paginatedListing: null,
 
     updateApartmentList: action((state, payload) => {
       state.paginatedListing = payload;
     }),
   },
   apartmentFilters: {
-    filters: {},
+    filters: null,
 
     setFilters: action((state, apartmentFilters) => {
       state.filters = apartmentFilters;
