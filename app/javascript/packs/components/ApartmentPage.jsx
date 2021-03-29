@@ -10,6 +10,7 @@ function ApartmentPage() {
   const updateApartmentList = useStoreActions((actions) => actions.apartments.updateApartmentList);
   const searchParams = useStoreState((state) => state.apartmentFilters.filters);
   const apartmentsData = useStoreState((state) => state.apartments.paginatedListing);
+  const currentPage = searchParams.page || 1;
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,7 +28,7 @@ function ApartmentPage() {
         }
       );
     }
-  }, [])
+  }, [searchParams])
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -37,8 +38,8 @@ function ApartmentPage() {
     return (
       <React.Fragment>
         <ApartmentList />
-        {!apartmentsData.is_first_page && <PaginationLink name='previos'></PaginationLink>}
-        {!apartmentsData.is_last_page && <PaginationLink name='next'></PaginationLink>}
+        {!apartmentsData.is_first_page && <PaginationLink name='previous' pageNumber={currentPage - 1}></PaginationLink>}
+        {!apartmentsData.is_last_page && <PaginationLink name='next' pageNumber={currentPage + 1}></PaginationLink>}
       </React.Fragment>
     )
   }

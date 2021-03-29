@@ -11,6 +11,7 @@ const model = {
       state.paginatedListing = payload;
     }),
   },
+
   apartmentFilters: {
     filters: null,
 
@@ -19,7 +20,7 @@ const model = {
     }),
 
     updatePageNumber: action((state, newPageNumber) => {
-      state.filters.pageNUmber = newPageNumber;
+      state.filters.page = newPageNumber;
     }),
   },
 };

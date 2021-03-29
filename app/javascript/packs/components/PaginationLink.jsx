@@ -1,26 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
+import { useStoreActions } from 'easy-peasy';
 
-const PaginationLink = ({name, searchParams}) =>{
-  console.log('---pagination----');
-  console.log(searchParams);
-  console.log('--------');
+const PaginationLink = ({name, pageNumber}) =>{
+  const updatePageNumber = useStoreActions((actions) => actions.apartmentFilters.updatePageNumber);
+  function handleClick() {
+    updatePageNumber(pageNumber);
+  }
   return <React.Fragment>
-      <Link to='/apartments'>{name}</Link>
+    <button type="button" onClick={handleClick}>
+      {name}
+    </button>
   </React.Fragment>
 }
 
 PaginationLink.defaultProps = {
   name: '',
-  searchparams: {}
+  pageNumber: null
 
 }
 
 PaginationLink.propTypes = {
   name: PropTypes.string,
   pageNumber: PropTypes.number,
-  searchparams: PropTypes.object,
 }
 
 export default PaginationLink;
