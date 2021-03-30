@@ -20,7 +20,7 @@ function Apartments () {
       <div>Apartments Listing</div>
       <ApartmentPage />
       <Link to={`/`}> Back to Home </Link>
-      <ApartmentsFilterForm  />
+      <ApartmentsFilterForm redirect  />
     </React.Fragment>)
   }
 
