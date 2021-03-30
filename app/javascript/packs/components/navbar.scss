@@ -1,0 +1,35 @@
+nav {
+  background-color: snow;
+  box-shadow: 0 3px 10px rgba(204, 204, 204, 0.5);
+  position: sticky;
+  top: 0;
+  transition: background-color 250ms linear;
+  width: 100%;
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  line-height: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #00b6e3;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  padding: 0 25px;
+  display: block;
+  transition: all 150ms linear;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #00b6e3;
+  color: snow;
+}

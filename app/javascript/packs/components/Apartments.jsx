@@ -5,6 +5,8 @@ import ApartmentPage from './ApartmentPage.jsx';
 import ApartmentsFilterForm from './ApartmentsFilterForm.jsx';
 import { useLocation } from 'react-router-dom';
 import { useStoreActions } from 'easy-peasy';
+import { Box, Text } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react"
 
 function Apartments () {
   let location = useLocation();
@@ -17,10 +19,12 @@ function Apartments () {
     return  <div></div>;
   } else {
     return (<React.Fragment>
-      <div>Apartments Listing</div>
-      <ApartmentPage />
-      <Link to={`/`}> Back to Home </Link>
-      <ApartmentsFilterForm redirect  />
+      <Box pt={50} pl={50} w="100%"  color="black">
+        <Box pb={5}><Text fontSize="20px" color="green"><Link to={`/`}> {'< Back to Home'}</Link></Text></Box>
+        <Box pb={20}><Heading as="h1" size="2xl">Apartments Listing</Heading></Box>
+        <Box pb={5} pl={5}><ApartmentPage /></Box>
+        <Box pb={5} pl={5}><ApartmentsFilterForm redirect  /></Box>
+      </Box>
     </React.Fragment>)
   }
 
