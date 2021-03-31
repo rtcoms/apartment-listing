@@ -1,0 +1,30 @@
+.radio-btn {
+  background-color: #ccc;
+  padding: 14px;
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+.radio-btn input[type=radio] {
+  visibility: hidden;
+  width: 0;
+  margin: 0;
+  line-height: 16px;
+  transition: all 0.2s ease;
+}
+.radio-btn input[type=radio]:checked {
+  width: 15px;
+  transition: all 0.2s ease;
+}
+.radio-btn input[type=radio]::before {
+  content: "✓";
+  font-size: 0px;
+  transition: all 0.1s ease;
+}
+.radio-btn input[type=radio]:checked::before {
+  visibility: visible;
+  content: "✓";
+  font-size: 16px;
+  transition: all 0.1s ease;
+}
