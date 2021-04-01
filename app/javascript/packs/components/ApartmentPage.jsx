@@ -38,11 +38,13 @@ function ApartmentPage() {
   } else if (!isLoaded || apartmentsData === null) {
     return <div>Loading...</div>;
   } else {
+    console.log('----111---');
+    console.log(apartmentsData);
     return (
       <React.Fragment>
         <ApartmentList />
-        {!apartmentsData.is_first_page && <PaginationLink name='previous' pageNumber={currentPage - 1}></PaginationLink>}
-        {!apartmentsData.is_last_page && <PaginationLink name='next' pageNumber={currentPage + 1}></PaginationLink>}
+        {(apartmentsData.total > 0 && !apartmentsData.is_first_page) && <PaginationLink name='previous' pageNumber={currentPage - 1}></PaginationLink>}
+        {(apartmentsData.total > 0 && !apartmentsData.is_last_page) && <PaginationLink name='next' pageNumber={currentPage + 1}></PaginationLink>}
       </React.Fragment>
     )
   }
