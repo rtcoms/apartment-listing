@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render with name 1`] = `
+<div
+  className="chakra-stack css-1u3fgmi"
+>
+  <div
+    className="css-45tizf"
+  >
+    <div
+      className="chakra-stack css-n21gh5"
+    >
+      <h2
+        className="chakra-heading css-0"
+      >
+        <span
+          className="chakra-text css-79elbk"
+        >
+          Hello Kasaz
+        </span>
+        <br />
+        <span
+          className="chakra-text css-p03q1r"
+        >
+          Aparmtnet Listing
+        </span>
+      </h2>
+      <p
+        className="chakra-text css-mentm3"
+      >
+        This is an apartment listing management project
+      </p>
+      <div
+        className="chakra-stack css-qz7axs"
+      >
+        <button
+          className="chakra-button css-m56eyr"
+          type="button"
+        >
+          <a
+            href="/apartments"
+            onClick={[Function]}
+          >
+            View Apartments
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
