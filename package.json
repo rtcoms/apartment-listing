@@ -11,13 +11,14 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.2.1",
-    "@testing-library/react": "^11.2.5",
+    "@testing-library/react": "^11.2.6",
     "add": "^2.0.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.6.0",
     "easy-peasy": "^5.0.3",
     "formik": "^2.2.6",
     "framer-motion": "^4.0.3",
+    "isomorphic-fetch": "^3.0.0",
     "jquery": "^3.6.0",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
@@ -31,14 +32,16 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
     "jest": "^26.6.3",
+    "nock": "^13.0.11",
     "qs": "^6.10.1",
     "react-test-renderer": "^17.0.2",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "test": "jest",
-    "test-watch": "jest --watch"
+    "test": "API_HOST='http://react.local' jest",
+    "test-watch": "API_HOST='http://react.local' jest --watch"
   },
   "jest": {
     "roots": [

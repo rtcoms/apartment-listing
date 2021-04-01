@@ -9,25 +9,12 @@ const ApartmentCard = ({apartment}) => {
 
       <Box p="6">
         <Box d="flex" alignItems="baseline">
-          <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
-          >
+          <Box color="gray.500" fontWeight="semibold" letterSpacing="wide" fontSize="xs" textTransform="uppercase" ml="2" >
             {apartment.area} SQMT &bull; {apartment.number_of_bedrooms} beds &bull; {apartment.number_of_bathrooms} baths
           </Box>
         </Box>
 
-        <Box
-          mt="1"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          isTruncated
-        >
+        <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
           {apartment.title}
         </Box>
 
