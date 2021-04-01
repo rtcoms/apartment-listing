@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useStoreActions, useStoreState } from 'easy-peasy';
 import { fetchApartmentsApi } from '../api/apartment.js';
-import PropTypes from 'prop-types'
 import ApartmentList from './ApartmentList';
 import PaginationLink from './PaginationLink.jsx';
-
 
 function ApartmentPage() {
   const updateApartmentList = useStoreActions((actions) => actions.apartments.updateApartmentList);
@@ -14,9 +12,6 @@ function ApartmentPage() {
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-
-  console.log('------track search params');
-  console.log(searchParams);
 
   useEffect(() => {
     if(searchParams !== null) {
@@ -38,8 +33,6 @@ function ApartmentPage() {
   } else if (!isLoaded || apartmentsData === null) {
     return <div>Loading...</div>;
   } else {
-    console.log('----111---');
-    console.log(apartmentsData);
     return (
       <React.Fragment>
         <ApartmentList />

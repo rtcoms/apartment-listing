@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
-import { Button, Flex, Heading, Stack, Text, useBreakpointValue, } from '@chakra-ui/react';
+import { Button, Flex, Heading, Stack, Text, } from '@chakra-ui/react';
 
 const Home = () => (
   <Stack minH={'100vh'}>
