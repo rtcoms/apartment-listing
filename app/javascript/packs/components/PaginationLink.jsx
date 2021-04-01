@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStoreActions } from 'easy-peasy';
+import { Button } from '@chakra-ui/react';
 
 const PaginationLink = ({name, pageNumber}) =>{
   const updatePageNumber = useStoreActions((actions) => actions.apartmentFilters.updatePageNumber);
@@ -8,9 +9,7 @@ const PaginationLink = ({name, pageNumber}) =>{
     updatePageNumber(pageNumber);
   }
   return <React.Fragment>
-    <button type="button" onClick={handleClick}>
-      {name}
-    </button>
+    <Button rounded={'full'} bg={'blue.400'} color={'white'} onClick={handleClick} >{name}</Button>
   </React.Fragment>
 }
 

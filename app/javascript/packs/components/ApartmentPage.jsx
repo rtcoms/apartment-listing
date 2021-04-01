@@ -43,8 +43,8 @@ function ApartmentPage() {
     return (
       <React.Fragment>
         <ApartmentList />
-        {(apartmentsData.total > 0 && !apartmentsData.is_first_page) && <PaginationLink name='previous' pageNumber={currentPage - 1}></PaginationLink>}
-        {(apartmentsData.total > 0 && !apartmentsData.is_last_page) && <PaginationLink name='next' pageNumber={currentPage + 1}></PaginationLink>}
+        {(apartmentsData.total > 1 && !apartmentsData.is_first_page) && <PaginationLink name='previous' pageNumber={currentPage - 1}></PaginationLink>}
+        {(apartmentsData.total > 1 && !apartmentsData.is_last_page) && <PaginationLink name='next' pageNumber={currentPage + 1}></PaginationLink>}
       </React.Fragment>
     )
   }
