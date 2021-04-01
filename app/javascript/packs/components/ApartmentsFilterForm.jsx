@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { useStoreActions } from 'easy-peasy';
 import { useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { Box, Center, Text, Stack, HStack, VStack, Input, Radio, RadioGroup,  NumberInput, SimpleGrid, Button } from "@chakra-ui/react"
+import { VisuallyHidden, Box, Center, Text, Stack, HStack, VStack, Input, Radio, RadioGroup,  NumberInput, SimpleGrid, Button } from "@chakra-ui/react"
 import './form.scss';
 
  const ApartmentsFilterForm = ({redirect}) =>  {
@@ -49,7 +49,7 @@ import './form.scss';
           <Center>
             <VStack>
               <Text>Number of Bedrooms</Text>
-              <div classname="radioGroup">
+              <div className="radioGroup">
                 <RadioGroup name='number_of_bedrooms_gte'>
                   <HStack direction="row">
                     <label className='radio-btn'><Radio value='1' ref={register} className={'radio'} /> 1+</label>
@@ -59,8 +59,6 @@ import './form.scss';
                     <label className='radio-btn'><Radio value='5' ref={register} className={'radio'} /> 5+</label>
                   </HStack>
                 </RadioGroup>
-
-                <span class="indicator"></span>
               </div>
             </VStack>
           </Center>

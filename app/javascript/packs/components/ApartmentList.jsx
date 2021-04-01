@@ -14,7 +14,7 @@ const ApartmentList = () => {
       <ul>
       <SimpleGrid columns={{sm: 2, md: 3}} spacing="40px">
         {apartments.map((apartment) => {
-          return <ApartmentCard apartment={apartment.attributes} />;
+          return <ApartmentCard apartment={apartment.attributes} key={apartment.id} />;
         })}
       </SimpleGrid>
 

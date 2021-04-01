@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import qs, { parse } from 'qs';
 import { Link } from "react-router-dom";
 import ApartmentPage from './ApartmentPage.jsx';
-import ApartmentsFilterForm from './ApartmentsFilterForm.jsx';
 import { useLocation } from 'react-router-dom';
 import { useStoreActions } from 'easy-peasy';
 import { Box, Text } from "@chakra-ui/react"
@@ -23,7 +22,6 @@ function Apartments () {
         <Box pb={5}><Text fontSize="20px" color="green"><Link to={`/`}> {'< Back to Home'}</Link></Text></Box>
         <Box pb={20}><Heading as="h1" size="2xl">Apartments Listing</Heading></Box>
         <Box pb={5} pl={5}><ApartmentPage /></Box>
-        <Box pb={5} pl={5}><ApartmentsFilterForm redirect  /></Box>
       </Box>
     </React.Fragment>)
   }

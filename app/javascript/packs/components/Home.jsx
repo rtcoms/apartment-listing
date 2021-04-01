@@ -6,10 +6,7 @@ import ApartmentsFilterForm from './ApartmentsFilterForm.jsx';
 const Home = props => (
   <React.Fragment>
     <div>Home {props.name}!</div>
-    <ApartmentsFilterForm redirect  />
-    <Link to={`/apartments`}>
-      View Apartments
-    </Link>
+    <Link to={`/apartments`}>View Apartments</Link>
   </React.Fragment>
 )
 

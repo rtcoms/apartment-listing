@@ -1,30 +1,31 @@
 .radio-btn {
-  background-color: #ccc;
-  padding: 14px;
-  width: 100px;
+  background-color: white;
+  border: 1px solid black;
+  width: 50px;
   display: inline-block;
   text-align: center;
   cursor: pointer;
 }
 .radio-btn input[type=radio] {
+  display: none;
   visibility: hidden;
   width: 0;
   margin: 0;
   line-height: 16px;
-  transition: all 0.2s ease;
 }
 .radio-btn input[type=radio]:checked {
   width: 15px;
-  transition: all 0.2s ease;
+  background-color: greenyellow;
 }
+
 .radio-btn input[type=radio]::before {
-  content: "✓";
   font-size: 0px;
   transition: all 0.1s ease;
 }
 .radio-btn input[type=radio]:checked::before {
   visibility: visible;
   content: "✓";
+  background-color: green;
   font-size: 16px;
   transition: all 0.1s ease;
 }
