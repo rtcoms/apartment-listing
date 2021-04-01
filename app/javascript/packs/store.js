@@ -3,7 +3,7 @@ import { createStore } from 'easy-peasy';
 
 import { action } from 'easy-peasy';
 
-const model = {
+export const model = {
   apartments: {
     paginatedListing: null,
 
