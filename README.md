@@ -1,3 +1,6 @@
+Here is little video recording of app in live action on localhost: https://www.loom.com/share/538a60ac135c47099d9bc8d9882e33d1
+
+
 # README
 
 This Porject uses following libraries
