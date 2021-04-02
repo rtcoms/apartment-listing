@@ -3,12 +3,12 @@
 #
 
 apartment_identifier = Apartment.count
-10.times do |i|
+100.times do |i|
   Apartment.create(
     title: "Apartment #{apartment_identifier + i + 1}",
-    price: (i + 1)*50000,
-    area: (i + 1)*50,
-    number_of_bathrooms: [2,3,4].sample,
+    price: (50000..500000).to_a.sample,
+    area: (300..5000).to_a.sample,
+    number_of_bathrooms: [1,2,3,4].sample,
     number_of_bedrooms: [1,2,3].sample,
     image: 'https://images.unsplash.com/photo-1486304873000-235643847519'
   )

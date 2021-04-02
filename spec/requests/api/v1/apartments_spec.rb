@@ -19,15 +19,19 @@ RSpec.describe "Api::V1::Apartments", type: :request do
             { id: apartment_villa.id.to_s,
               attributes: { id: apartment_villa.id, title: apartment_villa.title }.ignore_extra_keys!
             }.ignore_extra_keys!,
+            { id: apartment_flat_3bhk.id.to_s,
+              attributes: { id: apartment_flat_3bhk.id, title: apartment_flat_3bhk.title }.ignore_extra_keys!
+            }.ignore_extra_keys!
           ]
         }.ignore_extra_keys!,
         total: 4,
         page: 1,
         total_pages: 2,
-        page_item_count: 2,
+        page_item_count: 3,
         is_first_page: true,
         is_last_page: false
       }
+
       expect(response).to be_successful
       expect(response).to have_http_status(:success)
       expect(response.body.as_json).to match_json_expression(expected_response)
