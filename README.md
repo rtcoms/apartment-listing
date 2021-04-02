@@ -35,7 +35,7 @@ Starting app:
     bundle exec rails db:create
     bundle exec rails db:migrate
     bundle exec rails db:seed
-    Start rails server: bundle exec rails c
+    Start rails server: bundle exec rails s
     Start js module bundler webpack: bin/webpack-dev-server
     
     Go to: http://localhost3000
