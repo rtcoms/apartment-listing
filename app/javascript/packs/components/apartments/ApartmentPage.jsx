@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useStoreActions, useStoreState } from 'easy-peasy';
-import { fetchApartmentsApi } from '../api/apartment.js';
+import { fetchApartmentsApi } from '../../api/apartment.js';
 import ApartmentList from './ApartmentList';
 import PaginationLink from './PaginationLink.jsx';
 

@@ -1,23 +1,15 @@
 import React from 'react';
 import qs from 'qs';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useHistory } from "react-router-dom";
-import { useStoreActions } from 'easy-peasy';
-import { useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { VisuallyHidden, Box, Center, Text, Stack, HStack, VStack, Input, Radio, RadioGroup,  NumberInput, SimpleGrid, Button } from "@chakra-ui/react"
+import { Center, Text, HStack, VStack, Input, Radio, RadioGroup, SimpleGrid, Button } from "@chakra-ui/react"
 import './form.scss';
 
  const ApartmentsFilterForm = ({redirect}) =>  {
-  let location = useLocation();
   const history = useHistory();
   const { register, handleSubmit, watch, errors } = useForm();
-  const updateQueryFilters = useStoreActions((actions) => actions.apartmentFilters.updateQueryFilters);
 
   const onSubmit = (data) => {
-    console.log('------filter form submission');
-    console.log(data);
-
     const queryString = qs.stringify({query: data})
     history.push(`/apartments?${queryString}`);
   };

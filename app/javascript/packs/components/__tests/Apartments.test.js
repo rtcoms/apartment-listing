@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import nock from 'nock';
 import {render, screen} from '@testing-library/react';
-import Apartments from '../Apartments.jsx';
+import Apartments from '../apartments/Apartments.jsx';
 import { createStore, StoreProvider } from 'easy-peasy';
 import { model } from '../../store.js';
 global.fetch = require('node-fetch');

@@ -12,7 +12,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import ApartmentFilterForm from './ApartmentsFilterForm.jsx';
+import ApartmentFilterForm from './apartments/ApartmentsFilterForm.jsx';
 
 import './navbar.scss';
 const Navbar=() => {
