@@ -2,7 +2,7 @@ import React from 'react';
 import qs from 'qs';
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { Center, Text, HStack, VStack, Input, Radio, RadioGroup, SimpleGrid, Button } from "@chakra-ui/react"
+import { Box, Center, Text, HStack, VStack, Input, Radio, RadioGroup, SimpleGrid, Button } from "@chakra-ui/react"
 import './form.scss';
 
  const ApartmentsFilterForm = ({redirect}) =>  {
@@ -14,8 +14,8 @@ import './form.scss';
     history.push(`/apartments?${queryString}`);
   };
 
-   return <div>
-     <h1>Search Apartments</h1>
+   return <Box p={5}>
+     <Center>Search Apartments</Center>
      <form onSubmit={handleSubmit(onSubmit)}>
         <VStack color='black'>
           <Center>
@@ -60,7 +60,7 @@ import './form.scss';
           <Button mt={4} type="submit">Submit</Button>
         </Center>
       </form>
-   </div>
+   </Box>
  };
 
  export default ApartmentsFilterForm;
