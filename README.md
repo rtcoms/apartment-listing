@@ -22,7 +22,7 @@ Frontend -
       
       ui library: chakra ui
       
-      react/testing-linrary for front-end tests
+      react/testing-library for front-end tests
 
 
 Instructions to setup project:
