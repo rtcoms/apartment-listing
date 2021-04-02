@@ -16,7 +16,7 @@ const ApartmentList = () => {
   return (
     <div>
       <ul>
-      <SimpleGrid columns={{sm: 2, md: 3}} spacing="40px">
+      <SimpleGrid columns='3' spacing="40px" pr={50} mb={50}>
         {apartments.map((apartment) => {
           return <ApartmentCard apartment={apartment.attributes} key={apartment.id} />;
         })}

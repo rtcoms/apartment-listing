@@ -5,7 +5,7 @@ const ApartmentCard = ({apartment}) => {
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={apartment.image} />
+      <Image src={apartment.image} htmlHeight={'300px'} htmlwidth={'100%'} />
 
       <Box p="6">
         <Box d="flex" alignItems="baseline">
